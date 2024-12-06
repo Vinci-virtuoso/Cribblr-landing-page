@@ -1,18 +1,8 @@
 "use client"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
-import { useEffect } from "react"
+import { PopupButton } from '@typeform/embed-react'
 
 export function Hero() {
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = "//embed.typeform.com/next/embed.js"
-    script.async = true
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-black dot-pattern overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Background gradient effects */}
@@ -33,18 +23,18 @@ export function Hero() {
           AI-powered automation designed to help Real Estate, Insurance, Law Firms, eCommerce, and SMEs save costs, boost productivity, and drive revenue.
         </p>
 
-        {/* Shimmer Button */}
+        {/* Typeform Button */}
         <div className="flex justify-center">
-          <ShimmerButton
-            shimmerColor="#ff8c00"
-            className="text-base sm:text-lg font-semibold gradient-bg px-6 py-3 sm:px-8 sm:py-4"
-            onClick={() => {
-              const { tf } = window as any
-              tf.createPopup('DFfNp9bb').open()
-            }}
+          <PopupButton 
+            id="DFfNp9bb"
           >
-            Start Automating Today
-          </ShimmerButton>
+            <ShimmerButton
+              shimmerColor="#ff8c00"
+              className="text-base sm:text-lg font-semibold gradient-bg px-6 py-3 sm:px-8 sm:py-4"
+            >
+              Start Automating Today
+            </ShimmerButton>
+          </PopupButton>
         </div>
       </div>
     </div>
