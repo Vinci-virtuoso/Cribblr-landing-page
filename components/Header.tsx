@@ -8,6 +8,7 @@ const navigation = [
   { name: "Blog", href: "#blog" },
   { name: "Services", href: "#services" },
   { name: "About Us", href: "#about" },
+  { name: "Demo", href: "#demo" },
 ]
 
 export function Header() {
@@ -15,7 +16,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
   
   return (
-    <header className="fixed w-full top-0 z-50">
+    <header className="fixed w-full top-0 z-50 dot-pattern">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="backdrop-blur-md bg-black/30 rounded-full py-6 px-4 sm:px-6 py-3 flex items-center justify-between">
           {/* Logo Section */}
