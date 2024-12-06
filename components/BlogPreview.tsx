@@ -27,18 +27,18 @@ export function BlogPreview() {
   return (
     <section id="blog" className="py-24 bg-black dot-pattern">
       <div className="container mx-auto px-4">
-        <div className="flex items-center gap-4 mb-12">
+      <div className="flex items-center justify-center gap-4 mb-12">
           <div className="text-5xl sm:text-7xl font-bold tracking-tight text-orange-500">BLOG</div>
         </div>
         
-        <div className="space-y-4 max-w-4xl">
+        <div className="space-y-4 w-full">
           {posts.map((post, index) => (
             <div key={index}>
               <div
                 onClick={() => setExpandedPost(expandedPost === index ? null : index)}
-                className="block p-6 rounded-t-xl bg-[#111111] hover:bg-[#161616] border border-[#222222] transition-all duration-300 ease-in-out cursor-pointer"
+                className="block p-6 rounded-t-xl bg-[#111111] hover:bg-[#161616] border border-[#222222] transition-all duration-300 ease-in-out cursor-pointer w-full"
               >
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
                   <div className="space-y-2 mb-4 md:mb-0">
                     <p className="text-sm text-orange-400 font-medium">{post.date}</p>
                     <h3 className="text-xl font-semibold text-white group-hover:text-orange-300 transition-colors">{post.title}</h3>

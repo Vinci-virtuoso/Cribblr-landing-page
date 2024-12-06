@@ -39,7 +39,7 @@ export function Services() {
   return (
     <section id="services" className="py-24 dot-pattern">
       <div className="container mx-auto px-4">
-        <div className="flex items-center gap-4 mb-12">
+        <div className="flex items-center justify-center gap-4 mb-12">
           <div className="text-7xl font-bold tracking-tight text-orange-500">SERVICES</div>
         </div>
 

@@ -5,10 +5,10 @@ import { cn } from "@/lib/utils"
 import { Menu, X } from 'lucide-react'
 
 const navigation = [
-  { name: "Blog", href: "#blog" },
   { name: "Services", href: "#services" },
-  { name: "About Us", href: "#about" },
   { name: "Demo", href: "#demo" },
+  { name: "Blog", href: "#blog" },
+  { name: "About Us", href: "#aboutus" },
 ]
 
 export function Header() {
