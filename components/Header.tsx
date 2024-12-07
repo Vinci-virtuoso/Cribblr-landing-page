@@ -8,12 +8,22 @@ const navigation = [
   { name: "Services", href: "#services" },
   { name: "Demo", href: "#demo" },
   { name: "Blog", href: "#blog" },
-  { name: "About Us", href: "#aboutus" },
+  { name: "About Us", href: "#about-us" },
 ]
 
 export function Header() {
   const [active, setActive] = React.useState("Services")
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+  
+  const handleNavClick = (name: string) => {
+    setActive(name)
+    setIsMenuOpen(false)
+    // Ensure smooth scrolling to the section
+    const element = document.getElementById(name.toLowerCase().replace(" ", "-"))
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
   
   return (
     <header className="fixed w-full top-0 z-50 dot-pattern">
@@ -50,9 +60,9 @@ export function Header() {
                   "block text-gray-300 hover:text-white transition-colors",
                   active === item.name && "gradient-text"
                 )}
-                onClick={() => {
-                  setActive(item.name)
-                  setIsMenuOpen(false)
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleNavClick(item.name)
                 }}
               >
                 {item.name}
@@ -64,4 +74,3 @@ export function Header() {
     </header>
   )
 }
-
