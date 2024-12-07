@@ -36,7 +36,6 @@ export function Footer() {
             </div>
           </div>
         </div>
-        
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-sm text-gray-400">
           <div className="space-x-6">
             <Link href="/privacy" className="hover:text-white">
