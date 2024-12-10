@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero"
 import { Services } from "@/components/Services"
 import { BlogPreview } from "@/components/BlogPreview"
 import { Footer } from "@/components/AboutUs"
-import { Demo } from "@/components/Demo"
+import { Spotlight } from "@/components/Spotlight"
 import Integrations from "@/components/Integrations"
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
         <Integrations />
         <Services />
-        <Demo />
+        <Spotlight />
         <BlogPreview />
       </main>
       <Footer />
