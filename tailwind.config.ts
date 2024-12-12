@@ -6,6 +6,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './src/**/*.{html,js,ts,jsx,tsx}',
     // TODO(Gaspar): This is here to trace components in the root
     // This should probably be scoped to a file
     "*.{js,ts,jsx,tsx,mdx}"

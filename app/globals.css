@@ -189,3 +189,11 @@ button {
 .embla__controls {
   display: none;
 }
+
+/* Add this to your CSS file */
+#substack-feed-embed,
+#custom-substack-embed {
+  max-width: 600px; /* Adjust as needed */
+  width: 100%; /* Ensure full width within the container */
+}
+

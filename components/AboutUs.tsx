@@ -3,10 +3,12 @@ import { Mail, Twitter } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 py-24 dot-pattern">
+    <footer id="about-us" className="bg-black border-t border-white/10 py-24 dot-pattern">
       <div className="container mx-auto px-4">
-      <div className="flex items-center justify-center gap-4 mb-12">
-          <div className="text-5xl sm:text-7xl font-bold tracking-tight text-orange-500">ABOUT US</div>
+        <div className="flex items-center justify-center gap-4 mb-12">
+          <div className="text-5xl sm:text-7xl font-bold tracking-tight text-orange-500">
+            ABOUT US
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-8 items-start">
@@ -15,12 +17,12 @@ export function Footer() {
               Cribblr<span className="text-orange-500">AI</span>
             </Link>
             <p className="mt-4 text-gray-400 max-w-md">
-              CribblrAI is at the forefront of AI-powered business solutions, 
-              helping companies across various industries to optimize their 
+              CribblrAI is at the forefront of AI-powered business solutions,
+              helping companies across various industries to optimize their
               operations and drive growth through cutting-edge technology.
             </p>
           </div>
-          
+
           <div className="grid gap-6 justify-end">
             <div className="flex items-center gap-2 text-gray-400">
               <Twitter className="w-5 h-5" />
@@ -31,7 +33,7 @@ export function Footer() {
             <div className="flex items-center gap-2 text-gray-400">
               <Mail className="w-5 h-5" />
               <a href="mailto:Vinci@Cribblr.ai" className="hover:text-white">
-                Vinci@Cribblr.ai
+                info@Cribblr.ai
               </a>
             </div>
           </div>
@@ -51,4 +53,3 @@ export function Footer() {
     </footer>
   )
 }
-

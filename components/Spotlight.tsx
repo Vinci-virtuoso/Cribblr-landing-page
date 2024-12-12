@@ -4,13 +4,13 @@ import styles from "./Spotlight.module.css"; // Import the CSS module
 
 export function Spotlight() {
   const [playingVideoIndex, setPlayingVideoIndex] = useState(1); // 0=left, 1=center, 2=right
-  const videoRefs = useRef([]);
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const video = entry.target;
+          const video = entry.target as HTMLVideoElement;
           if (videoRefs.current[playingVideoIndex] === video) {
             if (entry.isIntersecting) {
               video.play().catch(() => {});
@@ -35,7 +35,7 @@ export function Spotlight() {
     };
   }, [playingVideoIndex]);
 
-  const handleMouseEnter = (index) => {
+  const handleMouseEnter = (index: number) => {
     setPlayingVideoIndex(index);
     videoRefs.current.forEach((videoEl, i) => {
       if (videoEl && i !== index) {
@@ -57,8 +57,7 @@ export function Spotlight() {
             SPOTLIGHT
           </div>
           <div className="text-lg sm:text-xl text-gray-300 max-w-2xl text-center">
-            A closer look at some of our featured demonstrations, showcased in
-            our video collection.
+            A closer look at designed workflows built for some of our clients
           </div>
         </div>
 
@@ -73,7 +72,7 @@ export function Spotlight() {
               onMouseEnter={() => handleMouseEnter(0)}
             >
               <video
-                ref={(el) => (videoRefs.current[0] = el)}
+                ref={el => { videoRefs.current[0] = el }}
                 src="/resources/path-to-video-1.mp4"
                 muted
                 loop
@@ -99,7 +98,7 @@ export function Spotlight() {
               onMouseEnter={() => handleMouseEnter(1)}
             >
               <video
-                ref={(el) => (videoRefs.current[1] = el)}
+                ref={el => { videoRefs.current[1] = el }}
                 src="/resources/path-to-video-2.mp4"
                 muted
                 loop
@@ -125,7 +124,7 @@ export function Spotlight() {
               onMouseEnter={() => handleMouseEnter(2)}
             >
               <video
-                ref={(el) => (videoRefs.current[2] = el)}
+                ref={el => { videoRefs.current[2] = el }}
                 src="/resources/path-to-video-3.mp4"
                 muted
                 loop

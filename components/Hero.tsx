@@ -16,11 +16,11 @@ export function Hero() {
         </h2>
         
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
-          Revolutionizing Business Efficiency with Custom AI Solutions
+          Maximize Business Revenue With AI Solutions
         </h1>
 
         <p className="text-gray-400 max-w-2xl mx-auto mb-12 text-base sm:text-lg">
-          AI-powered automation designed to help Real Estate, Insurance, Law Firms, eCommerce, and SMEs save costs, boost productivity, and drive revenue.
+          Cutting edge technology designed to help Real Estate, Insurance, Law Firms, eCommerce, and SMEs save costs, boost productivity, and drive revenue.
         </p>
 
         {/* Typeform Button */}
