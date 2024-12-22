@@ -2,9 +2,10 @@ import { Header } from "@/components/Header"
 import { Hero } from "@/components/Hero"
 import { Services } from "@/components/Services"
 import { BlogPreview } from "@/components/BlogPreview"
-import { Footer } from "@/components/AboutUs"
+import { Footer } from "@/components/Footer"
 import { Spotlight } from "@/components/Spotlight"
 import Integrations from "@/components/Integrations"
+import { MarqueeDemo } from "@/components/Testimonial"
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Integrations />
         <Services />
         <Spotlight />
+        <MarqueeDemo />
         <BlogPreview />
       </main>
       <Footer />

@@ -2,109 +2,127 @@
 
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
+import { BorderBeam } from "@/components/ui/border-beam";
+import { FcAndroidOs } from "react-icons/fc";
+import { FcAssistant } from "react-icons/fc";
+import { FcLibrary } from "react-icons/fc";
+import { FcSimCardChip } from "react-icons/fc";
+import { FcBullish } from "react-icons/fc";
+import { FcWorkflow } from "react-icons/fc";
 
 const services = [
   {
-    id: 1,
-    title: "AUTONOMOUS AGENT DEVELOPMENT",
-    features: ["Workflow Automation", "Natural Language to SQL", "Complex Data Pipelines", "Self-Adaptive Systems"],
-    bgClass: "bg-white/5",
+    title: "Autonomous Agent Development",
+    bgClass: "bg-black",
     description: "CribblrAI assists you in identifying and integrating cutting-edge AI solutions, guiding you seamlessly from inception to deployment and beyond.",
+    icon: FcSimCardChip
   },
   {
-    id: 2,
-    title: "ENTERPRISE CONSULTING",
-    features: ["Strategy Development", "Performance Evaluation", "Use Case Identification", "Feasibility Assessments"],
+    title: "Enterprise Consulting", 
     bgClass: "bg-black",
     description: "Comprehensive consulting services to help enterprises leverage AI effectively.",
+    icon: FcLibrary
   },
   {
-    id: 3,
-    title: "CHATBOT DEVELOPMENT",
-    features: ["GPT Development", "Secure Solutions", "Knowledge Response", "Model Tuning"],
-    bgClass: "bg-emerald-900/80",
+    title: "Chatbot Development",
+    bgClass: "bg-black", 
     description: "Build sophisticated chatbots powered by the latest AI technologies.",
+    icon: FcAndroidOs
   },
+  {
+    title: "AI Driven Sales process",
+    bgClass: "bg-black",
+    description: "Seamlessly integrate AI capabilities into your existing systems and workflows.",
+    icon: FcBullish
+  },
+  {
+    title: "AI-powered workflow",
+    bgClass: "bg-black",
+    description: "Develop tailored AI solutions to address your specific business challenges and requirements.",
+    icon: FcWorkflow
+  },
+  {
+    title: "AI Training & Support",
+    bgClass: "bg-black",
+    description: "Comprehensive training and ongoing support for your team to effectively utilize AI technologies.",
+    icon: FcAssistant
+  }
 ]
 
 export function Services() {
+  const [hoveredCard, setHoveredCard] = React.useState<number | null>(null);
+
   return (
     <section id="services" className="py-24 dot-pattern">
-  <div className="container mx-auto px-4">
-    <div className="flex items-center justify-center gap-4 mb-12">
-      <div className="text-7xl font-bold tracking-tight text-orange-500">SERVICES</div>
-    </div>
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-center gap-4 mb-12">
+          <div className="text-7xl font-bold tracking-tight text-orange-500">SERVICES</div>
+        </div>
 
-    <div className="grid gap-8 items-start">
-      <div className="relative">
-        <div className="absolute -top-10 -left-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl" />
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          orientation="horizontal"
-          className="w-full"
-        >
-          <CarouselContent className="-ml-1 flex items-stretch">
-            {services.map((service) => (
-              <CarouselItem
-                key={service.id}
-                className="pl-1 md:basis-1/2 lg:basis-1/3 w-full flex items-stretch"
-              >
-                <div className="p-1 w-full flex items-stretch">
+        <div className="grid gap-8 items-start">
+          <div className="relative">
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl" />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {services.slice(0, 3).map((service, index) => (
+                <div 
+                  key={index} 
+                  className="w-full flex items-stretch relative"
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
                   <Card
-                    key={service.id}
                     className={cn(
-                      "border-0 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg flex flex-col",
+                      "border-0 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg flex flex-col w-full p-4",
                       service.bgClass
                     )}
                   >
                     <CardContent className="p-6 flex-grow flex flex-col justify-between">
                       <div>
-                        <div className="flex justify-between items-start mb-4">
-                          <div className="px-3 py-1 rounded-full border border-orange-500/30 text-sm">
-                            #{service.id}
-                          </div>
-                        </div>
-                        <h3 className="text-xl font-bold text-orange-500 mb-4">{service.title}</h3>
+                        <h3 className="text-xl font-bold text-white-200 mb-4 flex items-center gap-2">
+                          <service.icon className="text-2xl" />
+                          {service.title}
+                        </h3>
                         <p className="text-sm text-gray-300 mb-6">{service.description}</p>
-                      </div>
-                      <div className="grid gap-2">
-                        {service.features.map((feature, index) => (
-                          <button
-                            key={index}
-                            className="w-full px-4 py-2 text-left text-sm bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
-                          >
-                            {feature}
-                          </button>
-                        ))}
                       </div>
                     </CardContent>
                   </Card>
+                  <BorderBeam size={250} duration={12} delay={9} />
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0">
-            <CarouselPrevious className="absolute left-0 -translate-x-full" />
-            <CarouselNext className="absolute right-0 translate-x-full" />
+              ))}
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+              {services.slice(3).map((service, index) => (
+                <div 
+                  key={index} 
+                  className="w-full flex items-stretch relative"
+                  onMouseEnter={() => setHoveredCard(index + 3)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                >
+                  <Card
+                    className={cn(
+                      "border-0 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg flex flex-col w-full p-4",
+                      service.bgClass
+                    )}
+                  >
+                    <CardContent className="p-6 flex-grow flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-xl font-bold text--300 mb-4 flex items-center gap-2">
+                          <service.icon className="text-2xl" />
+                          {service.title}
+                        </h3>
+                        <p className="text-sm text-gray-300 mb-6">{service.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                  <BorderBeam size={250} duration={12} delay={9} />
+                </div>
+              ))}
+            </div>
           </div>
-        </Carousel>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
+    </section>
   )
 }
-

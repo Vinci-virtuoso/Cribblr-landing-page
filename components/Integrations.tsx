@@ -29,7 +29,7 @@ const integrations = [
 
 const Integrations = () => {
   return (
-    <section className="py-20 bg-black">
+    <section className="py-20 bg-black dot-pattern">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-5xl font-bold text-center text-white mb-16">
           We Integrate With

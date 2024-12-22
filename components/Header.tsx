@@ -7,8 +7,8 @@ import { Menu, X } from "lucide-react"
 const navigation = [
   { name: "Services", href: "#services" },
   { name: "Spotlight", href: "#spotlight" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "Blog", href: "#blog" },
-  { name: "AboutUs", href: "#about-us" },
 ]
 
 export function Header() {
@@ -59,7 +59,7 @@ export function Header() {
     setIsMenuOpen(false)
 
     // Smooth scrolling to the section
-    const id = name.toLowerCase().replace(" ", "-")
+    const id = href.slice(1)
     const element = document.querySelector(`#${id}`)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })

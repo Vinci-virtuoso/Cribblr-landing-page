@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import styles from "./Spotlight.module.css"; // Import the CSS module
+import styles from "./Spotlight.module.css";
+import MorphingText from "@/components/ui/morphing";
+import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
 
 export function Spotlight() {
   const [playingVideoIndex, setPlayingVideoIndex] = useState(1); // 0=left, 1=center, 2=right
@@ -67,83 +69,114 @@ export function Spotlight() {
 
           <div className="flex items-center justify-center gap-8">
             {/* Left Video */}
-            <div
-              className={`relative group ${styles.videoHover} w-[400px] h-[250px]`}
-              onMouseEnter={() => handleMouseEnter(0)}
-            >
-              <video
-                ref={el => { videoRefs.current[0] = el }}
-                src="/resources/path-to-video-1.mp4"
-                muted
-                loop
-                playsInline
-                className={
-                  "w-full h-full object-cover rounded-xl transition-filter duration-300 " +
-                  (playingVideoIndex === 0 ? "filter-none" : "filter blur-sm")
-                }
-                style={{ zIndex: 1 }}
-              />
+            <div className="flex flex-col items-center">
               <div
-                className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"
-                style={{
-                  boxShadow: "0 0 50px 10px rgba(255,255,255,0.2)",
-                  zIndex: 2,
-                }}
-              ></div>
+                className={`relative group ${styles.videoHover} w-[400px] h-[250px]`}
+                onMouseEnter={() => handleMouseEnter(0)}
+              >
+                <video
+                  ref={el => { videoRefs.current[0] = el }}
+                  src="/resources/path-to-video-1.mp4"
+                  muted
+                  loop
+                  playsInline
+                  className={
+                    "w-full h-full object-cover rounded-xl transition-filter duration-300 " +
+                    (playingVideoIndex === 0 ? "filter-none" : "filter blur-sm")
+                  }
+                  style={{ zIndex: 1 }}
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"
+                  style={{
+                    boxShadow: "0 0 50px 10px rgba(255,255,255,0.2)",
+                    zIndex: 2,
+                  }}
+                ></div>
+              </div>
+              <p className="text-white font-medium mt-4 text-center">
+                COLD CALLING VOICE AGENT IN ACTION
+              </p>
             </div>
 
             {/* Center Video */}
-            <div
-              className={`relative group ${styles.videoHover} w-[400px] h-[250px]`}
-              onMouseEnter={() => handleMouseEnter(1)}
-            >
-              <video
-                ref={el => { videoRefs.current[1] = el }}
-                src="/resources/path-to-video-2.mp4"
-                muted
-                loop
-                playsInline
-                className={
-                  "w-full h-full object-cover rounded-xl transition-filter duration-300 " +
-                  (playingVideoIndex === 1 ? "filter-none" : "filter blur-sm")
-                }
-                style={{ zIndex: 1 }}
-              />
+            <div className="flex flex-col items-center">
               <div
-                className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"
-                style={{
-                  boxShadow: "0 0 50px 10px rgba(255,255,255,0.2)",
-                  zIndex: 2,
-                }}
-              ></div>
+                className={`relative group ${styles.videoHover} w-[400px] h-[250px]`}
+                onMouseEnter={() => handleMouseEnter(1)}
+              >
+                <video
+                  ref={el => { videoRefs.current[1] = el }}
+                  src="/resources/path-to-video-2.mp4"
+                  muted
+                  loop
+                  playsInline
+                  className={
+                    "w-full h-full object-cover rounded-xl transition-filter duration-300 " +
+                    (playingVideoIndex === 1 ? "filter-none" : "filter blur-sm")
+                  }
+                  style={{ zIndex: 1 }}
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"
+                  style={{
+                    boxShadow: "0 0 50px 10px rgba(255,255,255,0.2)",
+                    zIndex: 2,
+                  }}
+                ></div>
+              </div>
+              <p className="text-white font-medium mt-4 text-center">
+                LAW FIRM DOCUMENTATION PROCESSING
+              </p>
             </div>
 
             {/* Right Video */}
-            <div
-              className={`relative group ${styles.videoHover} w-[400px] h-[250px]`}
-              onMouseEnter={() => handleMouseEnter(2)}
-            >
-              <video
-                ref={el => { videoRefs.current[2] = el }}
-                src="/resources/path-to-video-3.mp4"
-                muted
-                loop
-                playsInline
-                className={
-                  "w-full h-full object-cover rounded-xl transition-filter duration-300 " +
-                  (playingVideoIndex === 2 ? "filter-none" : "filter blur-sm")
-                }
-                style={{ zIndex: 1 }}
-              />
+            <div className="flex flex-col items-center">
               <div
-                className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"
-                style={{
-                  boxShadow: "0 0 50px 10px rgba(255,255,255,0.2)",
-                  zIndex: 2,
-                }}
-              ></div>
+                className={`relative group ${styles.videoHover} w-[400px] h-[250px]`}
+                onMouseEnter={() => handleMouseEnter(2)}
+              >
+                <video
+                  ref={el => { videoRefs.current[2] = el }}
+                  src="/resources/path-to-video-3.mp4"
+                  muted
+                  loop
+                  playsInline
+                  className={
+                    "w-full h-full object-cover rounded-xl transition-filter duration-300 " +
+                    (playingVideoIndex === 2 ? "filter-none" : "filter blur-sm")
+                  }
+                  style={{ zIndex: 1 }}
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300"
+                  style={{
+                    boxShadow: "0 0 50px 10px rgba(255,255,255,0.2)",
+                    zIndex: 2,
+                  }}
+                ></div>
+              </div>
+              <p className="text-white font-medium mt-4 text-center">
+                SHOPIFY PERSONALIZED RECOMMENDATION
+              </p>
             </div>
           </div>
+          <div className="flex flex-col items-center justify-center mt-12 gap-12">
+           <div className="w-full max-w-3xl text-center text-white text-2xl"> {/* Added container with max-width and proper text styling */}
+           <MorphingText 
+               className="mb-18"
+               texts={[
+                 "Free consultation + guaranteed boost in revenue in 60 days or full refund"
+               ]} 
+             />
+           </div>
+           <div className="mt-4"> {/* Added margin-top for spacing */}
+           <InteractiveHoverButton 
+             className="z-10 relative"
+             text="Claim for free"
+           />
+           </div>
+         </div>
         </div>
       </div>
     </section>
