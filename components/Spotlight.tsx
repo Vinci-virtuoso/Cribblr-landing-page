@@ -166,7 +166,7 @@ export function Spotlight() {
            <MorphingText 
                className="mb-18"
                texts={[
-                 "Free consultation + guaranteed boost in revenue in 60 days or full refund"
+                 "Free consultation + guaranteed  60 days revenue boost"
                ]} 
              />
            </div>
