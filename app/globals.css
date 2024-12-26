@@ -30,6 +30,10 @@
 
 html, body {
   height: 100%; /* Ensure the body takes the full height */
+  margin: 0;      /* Remove default browser margin */
+  padding: 0;     /* Remove default browser padding */
+  width: 100%;    /* Ensure the page spans the full viewport width */
+  overflow-x: hidden; /* Hide any accidental horizontal overflow */
 }
 
 body {
