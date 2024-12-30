@@ -1,4 +1,65 @@
 .videoHover {
     cursor: url("/resources/glasses-cursor_1.png"), auto; /* Replace with your image path */
   }
-  
+ /* Base styles */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  background-color: #121212;
+  color: white;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  opacity: 1;
+}
+
+/* Card content */
+.card .icon {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover .icon {
+  transform: scale(1.5);
+}
+
+.card .description {
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card:hover .description {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

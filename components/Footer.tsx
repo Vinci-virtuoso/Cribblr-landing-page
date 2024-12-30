@@ -3,7 +3,7 @@ import { Mail, Twitter } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer id="about-us" className="bg-black border-t border-white/10 py-24 dot-pattern">
+    <footer id="about-us" className="bg-black border-t border-white/10 py-2 dot-pattern">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-4 mb-12">
         </div>
