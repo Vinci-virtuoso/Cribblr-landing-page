@@ -31,20 +31,19 @@ const Integrations = () => {
   return (
     <section className="py-20 bg-black dot-pattern">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center text-white mb-16">
+        <h2 className="text-5xl lg:text-4xl md:text-4xl sm:text-3xl font-bold text-center text-white mb-16"> {/* Reduced size for small screens */}
           We Integrate With
         </h2>
         <div className="relative overflow-hidden">
           <div className="flex items-center space-x-8 animate-scroll">
             {integrations.concat(integrations).map((integration, index) => (
-              <div
-                key={index}
-                className="flex-shrink-0 h-16 w-auto flex items-center justify-center"
-              >
+              <div key={index} className="flex-shrink-0 flex items-center justify-center">
                 <img
                   src={integration.imageUrl}
                   alt={integration.name}
-                  className="h-12 w-auto"
+                  className="h-auto w-auto max-h-16 max-w-32 md:max-h-12 md:max-w-24 sm:max-h-8 sm:max-w-16"
+                  style={{ maxHeight: '4rem', maxWidth: '8rem' }}
+                  loading="lazy"
                 />
               </div>
             ))}
@@ -55,7 +54,7 @@ const Integrations = () => {
         .animate-scroll {
           display: flex;
           animation: scroll 20s linear infinite;
-          width: max-content; /* Ensures logos take up the correct width */
+          width: max-content;
         }
 
         @keyframes scroll {

@@ -69,9 +69,7 @@ const ReviewCard = ({
 export function MarqueeDemo() {
   return (
     <div id="testimonials" className="mt-24 relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg bg-black dot-pattern md:shadow-xl py-12">
-        <div className="text-5xl sm:text-7xl font-bold tracking-tight text-orange-500 mb-12">
-            TESTIMONIALS
-        </div>
+        <div className="text-3xl sm:text-5xl font-bold tracking-tight text-orange-500 mb-12">TESTIMONIALS</div>
       <Marquee pauseOnHover className="[--duration:20s]">
         {reviews.map((review) => (
           <ReviewCard key={review.username} {...review} />
