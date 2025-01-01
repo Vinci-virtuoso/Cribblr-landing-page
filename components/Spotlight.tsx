@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Spotlight.module.css";
 import MorphingText from "@/components/ui/morphing";
-import InteractiveHoverButton from "@/components/ui/interactive-hover-button";
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 
 export function Spotlight() {
   const [playingVideoIndex, setPlayingVideoIndex] = useState(1); // 0=left, 1=center, 2=right
@@ -166,15 +166,11 @@ export function Spotlight() {
            <MorphingText 
                className="mb-18"
                texts={[
-                 "Free consultation + guaranteed  60 days revenue boost"
+                 "Free consultation + guaranteed revenue boost"
                ]} 
              />
            </div>
            <div className="mt-4"> {/* Added margin-top for spacing */}
-           <InteractiveHoverButton 
-             className="z-10 relative"
-             text="Claim for free"
-           />
            </div>
          </div>
         </div>

@@ -1,1 +1,0 @@
-Create a folder named resources in the public directory then add video files in landscape called path-to-video-1.mp4, path-to-video-2.mp4 and path-to-video-3.mp4 to view the Spotlight section correctly.
