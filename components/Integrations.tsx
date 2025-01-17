@@ -3,7 +3,8 @@
 import React from 'react';
 
 const integrations = [
-  { name: 'Make', imageUrl: 'https://www.make.com/en/help/css/image/corporate-logo.svg' },
+  { name: 'Make', 
+    imageUrl: 'https://www.make.com/en/help/css/image/corporate-logo.svg' },
   {
     name: 'HighLevel',
     imageUrl:

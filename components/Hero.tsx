@@ -1,8 +1,42 @@
-"use client"
+"use client";
+import { useState } from 'react';
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { PopupButton } from '@typeform/embed-react'
 
+interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const Modal = ({ isOpen, onClose }: ModalProps) => {
+  if (!isOpen) return null;
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 bg-black opacity-50" onClick={onClose}></div>
+      <div className="relative z-50 w-[95%] max-w-4xl bg-white rounded-lg">
+        <button 
+          onClick={onClose}
+          className="absolute right-4 top-4 text-gray-500 hover:text-gray-700"
+        >
+          ✕
+        </button>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdJe1TeY2OZ_wRgJPHaS3AmeYREeSxbwRU1jmTlX9pQrw2d9g/viewform?embedded=true"
+          width="100%"
+          height="600px"
+          frameBorder="0"
+          className="rounded-lg"
+        >
+          Loading...
+        </iframe>
+      </div>
+    </div>
+  );
+};
+
 export function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center bg-black dot-pattern overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Background gradient effects */}
@@ -12,7 +46,7 @@ export function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center">
         <h2 className="gradient-text font-medium mb-4 text-xl sm:text-2xl">
-          Simplify. Execute. Growth
+          Simplify. Execute. Grow
         </h2>
         
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
@@ -25,17 +59,15 @@ export function Hero() {
 
         {/* Typeform Button */}
         <div className="flex justify-center">
-          <PopupButton 
-            id="DFfNp9bb"
-          >
-            <ShimmerButton
-              shimmerColor="#ff8c00"
-              className="text-base sm:text-lg font-semibold gradient-bg px-6 py-3 sm:px-8 sm:py-4"
-            >
-              Start Automating Today
-            </ShimmerButton>
-          </PopupButton>
+        <ShimmerButton
+          onClick={() => setIsModalOpen(true)}
+          shimmerColor="#ff8c00"
+          className="text-base sm:text-lg font-semibold gradient-bg px-6 py-3 sm:px-8 sm:py-4"
+        >
+          Start automating today
+        </ShimmerButton>
         </div>
+        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </div>
   )

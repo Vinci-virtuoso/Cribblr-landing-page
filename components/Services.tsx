@@ -11,6 +11,8 @@ import { FcSimCardChip } from "react-icons/fc";
 import { FcBullish } from "react-icons/fc";
 import { FcWorkflow } from "react-icons/fc";
 
+import MorphingText from "@/components/ui/morphing";
+
 const services = [
   {
     title: "Autonomous Agent Development",
@@ -76,7 +78,7 @@ export function Services() {
                     className={cn(
                       "border-0 rounded-2xl overflow-hidden transition-all duration-300 hover:transform hover:scale-105 hover:shadow-lg flex flex-col w-full p-4",
                       service.bgClass
-                    )}
+                    )} 
                   >
                     <CardContent className="p-6 flex-grow flex flex-col justify-between">
                       <div>
@@ -122,7 +124,19 @@ export function Services() {
             </div>
           </div>
         </div>
+        
+        {/* Modified bottom section */}
+        <div className="mt-16 flex justify-center">
+          <div className="w-full max-w-3xl flex flex-col items-center gap-8">
+            <MorphingText
+              className="text-white"
+              texts={[
+                "Free consultation + guaranteed 60 days revenue boost",
+              ]}
+            />
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }
