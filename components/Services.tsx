@@ -17,7 +17,7 @@ const services = [
   {
     title: "Autonomous Agent Development",
     bgClass: "bg-black",
-    description: "CribblrAI assists you in identifying and integrating cutting-edge AI solutions, guiding you seamlessly from inception to deployment and beyond.",
+    description: "We assists you in identifying and integrating cutting-edge AI solutions, guiding you seamlessly from inception to deployment and beyond.",
     icon: FcSimCardChip
   },
   {
@@ -29,25 +29,25 @@ const services = [
   {
     title: "Chatbot Development",
     bgClass: "bg-black", 
-    description: "Build sophisticated chatbots powered by the latest AI technologies.",
+    description: "We build sophisticated chatbots powered by the latest AI technologies.",
     icon: FcAndroidOs
   },
   {
     title: "AI Driven Sales process",
     bgClass: "bg-black",
-    description: "Seamlessly integrate AI capabilities into your existing systems and workflows.",
+    description: "Seamlessly integrate AI capabilities into your existing sales process.",
     icon: FcBullish
   },
   {
     title: "AI-powered workflow",
     bgClass: "bg-black",
-    description: "Develop tailored AI solutions to address your specific business challenges and requirements.",
+    description: " We help you develop tailored AI workflows to meet your specific business needs.",
     icon: FcWorkflow
   },
   {
     title: "AI Training & Support",
     bgClass: "bg-black",
-    description: "Comprehensive training and ongoing support for your team to effectively utilize AI technologies.",
+    description: "We offer comprehensive training and ongoing support for your team to effectively utilize AI technologies.",
     icon: FcAssistant
   }
 ]
