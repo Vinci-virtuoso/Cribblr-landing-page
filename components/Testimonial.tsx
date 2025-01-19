@@ -3,35 +3,25 @@ import Marquee from "@/components/ui/marquee";
 
 const reviews = [
   {
-    name: "Kuba",
-    username: "@Kubasmide",
-    body: "5 Lessons I Learned Automating Credit Card Processing with Voice AI Agents A thread 🧵:",
-    img: "https://avatar.vercel.sh/john",
+    name: "AnalyticalWells",
+    username: "@ebukawells",
+    body: "Shoutout to @Cribblrai Their AI automation solutions transformed how my clients and I work in tech sales. Increased efficiency, saved time, and boosted results. If you’re not automating with them, you’re missing out!",
+    img: "/images/Screenshot 2025-01-19 185103.png",
   },
   {
-    name: "CNM",
-    username: "@CNeuralmind",
-    body: "At @cribblrAI, we don't just build solutions; we craft experiences that empower businesses to do more with AI. Ready to transform your workflows? Let's talk!",
-    img: "https://avatar.vercel.sh/jane",
+    name: "Stephen Foley",
+    username: "",
+    body: "My client liked the demo and would love to move forward with setting up...It was nice working with the team.",
+    img: "/images/Screenshot 2025-01-19 182027.png"
   },
-  {
-    name: "Vinci",
-    username: "@vinci_vituoso",
-    body: "To stay updated about AI Agents and building advanced workflows that can autonomously work for you follow @cribblrAI",
-    img: "https://avatar.vercel.sh/jack",
+    {
+    name: "Pearse Melia",
+    username: "",
+    body: "The bot is really good. I really like it.",
+    img: "/images/image.png",
   },
-  {
-    name: "Kuba",
-    username: "@Kubasmide",
-    body: "People are comfortable interacting with AI.Yes, really. We've seen it firsthand.Want to see this in action? Check out @cribblrAI",
-    img: "https://avatar.vercel.sh/jill",
-  },
-  {
-    name: "Vinci",
-    username: "@vinci_virtuoso",
-    body: "Vertical AI Agent will bring ease in operations to the labor market with advanced AI assistants that will help reduce rigorous workload while being cost effective and very efficient",
-    img: "https://avatar.vercel.sh/john",
-  },
+  
+
 ];
 
 const ReviewCard = ({

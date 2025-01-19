@@ -29,20 +29,16 @@ export function Footer() {
             </div>
             <div className="flex items-center gap-2 text-gray-400">
               <Mail className="w-5 h-5" />
-              <a href="mailto:Vinci@Cribblr.ai" className="hover:text-white">
-                info@Cribblr.ai
+              <a href="mailto:info@cribblrai.com" className="hover:text-white">
+                info@Cribblrai.com
               </a>
             </div>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-sm text-gray-400">
           <div className="space-x-6">
-            <Link href="/privacy" className="hover:text-white">
               Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white">
               Terms of Service
-            </Link>
           </div>
           <p>&copy; {new Date().getFullYear()} CribblrAI. All rights reserved.</p>
         </div>
