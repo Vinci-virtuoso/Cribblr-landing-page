@@ -14,9 +14,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          {/* Other meta tags, link tags, etc. */}
-        </head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/images/logo.webp" />
+        {/* Other meta tags, link tags, etc. */}
+      </head>
       <body>{children}</body>
     </html>
   )
