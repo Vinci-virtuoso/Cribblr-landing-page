@@ -27,9 +27,9 @@ const services = [
     icon: FcLibrary
   },
   {
-    title: "Chatbot Development",
+    title: "Conversational AI",
     bgClass: "bg-black", 
-    description: "We build sophisticated chatbots powered by the latest AI technologies.",
+    description: "We build and deploy conversational chatbots and voice assistants that enhance customer engagement and support.",
     icon: FcAndroidOs
   },
   {
@@ -39,9 +39,9 @@ const services = [
     icon: FcBullish
   },
   {
-    title: "AI-powered workflow",
+    title: "AI Model Evaluation and Maintenance",
     bgClass: "bg-black",
-    description: " We help you develop tailored AI workflows to meet your specific business needs.",
+    description: "We ensure seamless deployment and end-to-end evaluation of AI solutions",
     icon: FcWorkflow
   },
   {
@@ -49,7 +49,8 @@ const services = [
     bgClass: "bg-black",
     description: "We offer comprehensive training and ongoing support for your team to effectively utilize AI technologies.",
     icon: FcAssistant
-  }
+  },
+
 ]
 
 export function Services() {
