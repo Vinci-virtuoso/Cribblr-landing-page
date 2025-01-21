@@ -3,12 +3,20 @@
 import React from 'react';
 
 const integrations = [
-  { name: 'Make', 
-    imageUrl: 'https://www.make.com/en/help/css/image/corporate-logo.svg' },
   {
     name: 'HighLevel',
     imageUrl:
       'https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://cdn.filesafe.space/location%2FknES3eSWYIsc5YSZ3YLl%2Fimages%2F63413f4d-3691-4d3e-8e9c-31ba9bd55cf9.png?alt=media',
+  },
+  {
+    name: 'MAKE',
+    imageUrl:
+      'https://imgs.search.brave.com/Kx_jjDcVLMN9DKVNq2HheLWAO0hUsLC01CxETqJ7ngI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cHJvZC53ZWJzaXRl/LWZpbGVzLmNvbS82/NjJhOTEwY2I4NTg5/ZjQ5MTQwZTU0YmQv/NjYyZDQzNDg2M2M1/ZGEzMDQwNjZjYTI4/X0ljUkthTkFITFhJ/TWs5aW1KLW0yZXVa/eDBjazBKVGtXSVlG/Wm02cGE0Ykkud2Vi/cA'
+  },
+  {
+    name: 'N8N',
+    imageUrl:
+      'https://imgs.search.brave.com/cLGKhOZhAl5tLQfaPWdlfv9eeSciQSIZspObQ439z64/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy81/LzUzL044bi1sb2dv/LW5ldy5zdmc'
   },
   {
     name: 'Relevance AI',
