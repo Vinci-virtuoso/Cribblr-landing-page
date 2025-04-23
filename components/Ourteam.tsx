@@ -6,25 +6,25 @@ const demoData: Gallery4Props = {
   items: [
     {
       id: "member-1",
-      title: "Aderogba Emmanuel - CEO & Co-Founder",
+      title: "Aderogba Emmanuel",
       description:
-        "",
+        "Co-Founder",
       href: "https://www.linkedin.com/in/adebowaleaderogba/", 
       image: "images/1737398728464.jpg", 
     },
     {
       id: "member-2",
-      title: "Akinropo Oluwseun - Head of Product & Co-Founder",
+      title: "Akinropo Oluwseun",
       description:
-        "",
+        "Co-Founder",
       href: "https://www.linkedin.com/in/olabisi-oluwaseun-7a0bb9295/",
       image: "images/image.webp",
     },
     {
       id: "member-3",
-      title: "Ekunola Solomon - CTO & Co-Founder",
+      title: "Ekunola Solomon ",
       description:
-        "",
+        "Co-Founder",
       href: "https://www.linkedin.com/in/olumide-ekunola-82a15019a/",
       image: "images/1697040335959.jpg",
     },
