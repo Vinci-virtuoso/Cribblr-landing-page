@@ -1,47 +1,52 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from 'next/server';
 
-export async function POST(req: NextRequest) {
+type ContactPayload = {
+  fullName: string;
+  companyName: string;
+  emailAddress: string;
+  phoneNumber: string;
+  projectScope: string;
+};
+
+export async function POST(request: NextRequest) {
   try {
-    const { fullName, companyName, emailAddress, phoneNumber,projectScope } = await req.json();
+    const body = (await request.json()) as Partial<ContactPayload>;
+    const { fullName, companyName, emailAddress, phoneNumber, projectScope } = body;
 
-    // Prepare Airtable API request
-    const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
-    const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
-    const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME;
-
-    if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID || !AIRTABLE_TABLE_NAME) {
-      return NextResponse.json({ error: "Airtable credentials not set" }, { status: 500 });
+    if (!fullName || !companyName || !emailAddress || !phoneNumber || !projectScope) {
+      return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
     }
 
-    const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(
-      AIRTABLE_TABLE_NAME
-    )}`;
+    const MAILCHIMP_API_KEY = process.env.MAILCHIMP_API_KEY!;
+    const MAILCHIMP_SERVER_PREFIX = process.env.MAILCHIMP_SERVER_PREFIX!;
+    const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID!;
 
-    const airtableRes = await fetch(airtableUrl, {
-      method: "POST",
+    const response = await fetch(`https://${MAILCHIMP_SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`, {
+      method: 'POST',
       headers: {
-        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
-        "Content-Type": "application/json",
+        Authorization: `apikey ${MAILCHIMP_API_KEY}`,
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        fields: {
-          'fullName': fullName,
-          'companyName': companyName,
-          'emailAddress': emailAddress,
-          'phoneNumber': phoneNumber,
-          'projectScope': projectScope,
+        email_address: emailAddress,
+        status: 'subscribed',
+        merge_fields: {
+          FNAME: fullName,
+          COMPANY: companyName,
+          PHONE: phoneNumber,
+          SCOPE: projectScope,
         },
       }),
     });
 
-    if (!airtableRes.ok) {
-      const error = await airtableRes.text();
-      console.error("Airtable API Error:", error); // Log the specific error from Airtable
-      return NextResponse.json({ error: "Failed to submit to Airtable" }, { status: 500 }); // Return a more generic error to the client
+    if (!response.ok) {
+      const errorData = await response.json();
+      return NextResponse.json({ error: 'Mailchimp error', details: errorData }, { status: response.status });
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ success: true, message: 'Subscribed to Mailchimp' }, { status: 200 });
   } catch (err) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    console.error(err);
+    return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
