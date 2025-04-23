@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Twitter } from 'lucide-react'
+import { Mail, Twitter, Linkedin, Instagram } from 'lucide-react' // Added Instagram
 
 export function Footer() {
   return (
@@ -31,6 +31,18 @@ export function Footer() {
               <Mail className="w-5 h-5" />
               <a href="mailto:info@cribblrai.com" className="hover:text-white">
                 info@Cribblrai.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-gray-400">
+              <Linkedin className="w-5 h-5" />
+              <a href="https://linkedin.com/company/cribblrai" className="hover:text-white"> {/* Added LinkedIn */}
+                CribblrAI
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-gray-400">
+              <Instagram className="w-5 h-5" />
+              <a href="https://www.instagram.com/cribblrai_1/" className="hover:text-white"> {/* Added Instagram */}
+                @CribblrAI
               </a>
             </div>
           </div>

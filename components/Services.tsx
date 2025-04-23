@@ -10,9 +10,6 @@ import { FcLibrary } from "react-icons/fc";
 import { FcSimCardChip } from "react-icons/fc";
 import { FcBullish } from "react-icons/fc";
 import { FcWorkflow } from "react-icons/fc";
-
-import MorphingText from "@/components/ui/morphing";
-
 const services = [
   {
     title: "Autonomous Agent Development",
@@ -123,18 +120,6 @@ export function Services() {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-        
-        {/* Modified bottom section */}
-        <div className="mt-16 flex justify-center">
-          <div className="w-full max-w-3xl flex flex-col items-center gap-8">
-            <MorphingText
-              className="text-white"
-              texts={[
-                "Free consultation + guaranteed 60 days revenue boost",
-              ]}
-            />
           </div>
         </div>
       </div>
