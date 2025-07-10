@@ -47,7 +47,7 @@ export function Team() {
       </div>
       <div className="flex flex-col items-center w-full max-w-3xl">
         <h3 className="text-lg text-gray-400 max-w-xl mx-auto text-center">
-        Get to know the talented individuals driving Cribblr forward. Our diverse team brings passion, expertise, and dedication to building the future of Intelligent AI Assistants.
+        Get to know the talented individuals driving Cribblr AI Technologies Ltd forward. Our diverse team brings passion, expertise, and dedication to building the future of Intelligent AI Assistants.
         </h3>
       </div>
       <div className="w-full max-w-6xl px-4">
