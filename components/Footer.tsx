@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Twitter, Linkedin, Instagram } from 'lucide-react' // Added Instagram
+import { Mail, Twitter, Linkedin, Instagram, Phone, MapPin } from 'lucide-react' // Added Instagram, Phone, and MapPin
 
 export function Footer() {
   return (
@@ -14,7 +14,7 @@ export function Footer() {
               Cribblr<span className="text-orange-500">AI</span>
             </Link>
             <p className="mt-4 text-gray-400 max-w-md">
-              CribblrAI is at the forefront of AI-powered business solutions,
+              Cribblr AI Technologies Ltd is at the forefront of AI-powered business solutions,
               helping companies across various industries to optimize their
               operations and drive growth through cutting-edge technology.
             </p>
@@ -45,6 +45,18 @@ export function Footer() {
                 @CribblrAI
               </a>
             </div>
+            <div className="flex items-center gap-2 text-gray-400">
+              <Phone className="w-5 h-5" />
+              <a href="tel:+2348101717470" className="hover:text-white">
+                +2348101717470
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-gray-400">
+              <MapPin className="w-5 h-5" />
+              <span className="hover:text-white">
+                30, Omila Alawode street, Ayobo, Lagos
+              </span>
+            </div>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-sm text-gray-400">
@@ -52,7 +64,7 @@ export function Footer() {
               Privacy Policy
               Terms of Service
           </div>
-          <p>&copy; {new Date().getFullYear()} CribblrAI. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Cribblr AI Technologies Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>
