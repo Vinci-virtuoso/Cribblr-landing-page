@@ -81,7 +81,7 @@ export default function ContactUs() {
           </Card>
           <div className="text-base text-gray-400 mt-2">
             Alternatively, contact us via
-            or email <span className="text-orange-500 font-semibold">info@cribblrai.com</span>.
+            or email <span className="text-orange-500 font-semibold">cribblraitech@cribby.dev</span>
           </div>
         </div>
         {/* Right Side - Form */}
